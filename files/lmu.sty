@@ -1,0 +1,70 @@
+ 
+% Load required packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{makecmds}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{hyperref}
+
+\RequirePackage{graphicx}
+\RequirePackage{fancyvrb}
+\RequirePackage{etoolbox}
+\RequirePackage{tikz}
+
+
+\headheight20mm
+\footskip30mm
+\institute{Institut f{\"u}r Statistik\\Ludwig-Maximilians-Universit{\"a}t M{\"u}nchen}
+\setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth,height=\paperheight]{files/bg_lmu.png}}
+
+\defbeamertemplate*{title page}{customized}[1][]{
+    \bigskip \textbf{\Large \inserttitle}\\
+    \bigskip \normalsize \textbf{\insertauthor}\\
+    \vfill
+    \bigskip \insertinstitute\\
+    \setbeamertemplate{background canvas}[default]
+}
+
+
+%%% Set less spacing between code and output
+\provideenvironment{knitrout}{}{}
+\renewenvironment{knitrout}{\setlength{\topsep}{0mm}}{}
+
+%%% Colour names
+\definecolor{lmugruen}{rgb}{0,0.38,0.16} 
+\definecolor{darkred}{rgb}{0.56, 0, 0}
+\definecolor{emcolor}{rgb}{0.56, 0, 0}
+\definecolor{darkgreen}{rgb}{0, 0.56, 0}
+\definecolor{darkgrey}{rgb}{0.3, 0.3, 0.3}
+\definecolor{darkblue}{rgb}{0, 0, 0.56}
+\definecolor{linkcolor}{rgb}{0.56, 0.56, 0.56}
+
+
+
+\newcommand{\location}[1]{\def\@location{#1}}
+\location{}
+
+\newcommand{\leftfoot}[1]{\def\@leftfoot{#1}}
+\leftfoot{Seminar - Ethics in AI}
+
+\newcommand{\rightfoot}[1]{\def\@rightfoot{#1}}
+\rightfoot{\insertframenumber}
+
+
+\setbeamercolor{frametitle}{fg=lmugruen}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamercolor{frametitle underline}{fg=black,bg=black}
+\setbeamercolor{leftfoot}{fg=darkgrey}
+\setbeamercolor{rightfoot}{fg=darkgrey}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{description item}{\bfseries\insertdescriptionitem\hfill}
+
+\addtobeamertemplate{frametitle}{
+    \hspace*{4.5em}
+}{}
+\setbeamertemplate{footline}[text line]{
+  \parbox{\linewidth}{\vskip-.5cm \textcolor{lmugruen}{\small{Seminar - Ethics in AI \hfill \insertpagenumber}}}
+}
