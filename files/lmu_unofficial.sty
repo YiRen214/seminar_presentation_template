@@ -1,5 +1,4 @@
- 
-% Load required packages
+ % Load required packages
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
@@ -8,15 +7,14 @@
 \usepackage{array}
 \usepackage{multicol}
 \usepackage{hyperref}
-
-\RequirePackage{graphicx}
-\RequirePackage{fancyvrb}
-\RequirePackage{etoolbox}
-\RequirePackage{tikz}
-
+\usepackage{graphicx}
+\usepackage{fancyvrb}
+\usepackage{etoolbox}
+\usepackage{tikz}
 
 \headheight20mm
 \footskip30mm
+
 \institute{Institut f{\"u}r Statistik\\Ludwig-Maximilians-Universit{\"a}t M{\"u}nchen}
 \setbeamertemplate{background canvas}{\includegraphics[width=\paperwidth,height=\paperheight]{files/bg_lmu.png}}
 
@@ -34,26 +32,12 @@
 \renewenvironment{knitrout}{\setlength{\topsep}{0mm}}{}
 
 %%% Colour names
-\definecolor{lmugruen}{rgb}{0,0.38,0.16} 
-\definecolor{darkred}{rgb}{0.56, 0, 0}
+\definecolor{lmugruen}{rgb}{0,0.38,0.16}
 \definecolor{emcolor}{rgb}{0.56, 0, 0}
-\definecolor{darkgreen}{rgb}{0, 0.56, 0}
 \definecolor{darkgrey}{rgb}{0.3, 0.3, 0.3}
-\definecolor{darkblue}{rgb}{0, 0, 0.56}
 \definecolor{linkcolor}{rgb}{0.56, 0.56, 0.56}
 
-
-
-\newcommand{\location}[1]{\def\@location{#1}}
-\location{}
-
-\newcommand{\leftfoot}[1]{\def\@leftfoot{#1}}
-\leftfoot{Seminar - Ethics in AI}
-
-\newcommand{\rightfoot}[1]{\def\@rightfoot{#1}}
-\rightfoot{\insertframenumber}
-
-
+% Frame Layout
 \setbeamercolor{frametitle}{fg=lmugruen}
 \setbeamerfont{frametitle}{series=\bfseries}
 \setbeamercolor{frametitle underline}{fg=black,bg=black}
@@ -62,9 +46,23 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{description item}{\bfseries\insertdescriptionitem\hfill}
 
+% Spacing of Frame Title
 \addtobeamertemplate{frametitle}{
     \hspace*{4.5em}
 }{}
+
+% Footer Text
 \setbeamertemplate{footline}[text line]{
   \parbox{\linewidth}{\vskip-.5cm \textcolor{lmugruen}{\small{Seminar - Ethics in AI \hfill \insertpagenumber}}}
 }
+
+%%% Hypersetup
+\hypersetup{colorlinks, linkcolor=linkcolor}
+
+%%% various
+\renewcommand{\textbullet}{$\bullet$}
+\providecommand{\code}[1]{\textcolor{darkgreen}{\texttt{#1}}}
+
+%%% Beamer-Templates
+% left align description items
+\setbeamertemplate{description item}{\bfseries\insertdescriptionitem\hfill}

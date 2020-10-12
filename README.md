@@ -1,2 +1,2 @@
-# seminar_presentation_template
+# Seminar Presentation Template
 Presentation Template for a Seminar held at LMU Munich

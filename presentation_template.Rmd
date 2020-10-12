@@ -6,7 +6,7 @@ output:
   beamer_presentation:
     keep_tex: true
     includes:
-      in_header: files/lmu.sty # Keep this for LMU  Background
+      in_header: files/lmu_unofficial.sty # Keep this for LMU  Background
 ---
 
 ```{r setup, include=FALSE}
